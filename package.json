@@ -1,5 +1,5 @@
 {
-  "name": "react-native-swiper",
+  "name": "react-native-swiper-ios",
   "keywords": [
     "react-component",
     "react-native",
@@ -43,14 +43,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leecade/react-native-swiper.git"
+    "url": "git+https://github.com/leecade/react-native-swiper-ios.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/leecade/react-native-swiper/issues"
+    "url": "https://github.com/leecade/react-native-swiper-ios/issues"
   },
-  "homepage": "https://github.com/leecade/react-native-swiper#readme",
+  "homepage": "https://github.com/leecade/react-native-swiper-ios#readme",
   "devDependencies": {
     "babel-eslint": "^8.0.1",
     "rimraf": "^2.5.4",
