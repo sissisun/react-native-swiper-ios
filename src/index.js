@@ -299,7 +299,7 @@ export default class extends Component {
     // to emulate offset.
     if (Platform.OS === 'ios') {
       if (this.initialRender && this.state.total > 1) {
-        this.scrollView.scrollTo({...offset, animated: false})
+        this.scrollView && this.scrollView.scrollTo({...offset, animated: false})
         this.initialRender = false;
       }
     }
