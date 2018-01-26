@@ -194,8 +194,12 @@ export default class extends Component {
   loopJumpTimer = null
 
   componentWillReceiveProps (nextProps) {
+    this.initialRender = true
     if (!nextProps.autoplay && this.autoplayTimer) clearTimeout(this.autoplayTimer)
     this.setState(this.initState(nextProps, this.props.index !== nextProps.index))
+    setTimeout(() => {
+      this.onLayout()
+    })
   }
 
   componentDidMount () {
@@ -270,7 +274,7 @@ export default class extends Component {
   }
 
   onLayout = (event) => {
-    const { width, height } = event.nativeEvent.layout
+    const { width, height } = event ? event.nativeEvent.layout: {width: this.state.width, height: this.state.height}
     const offset = this.internals.offset = {}
     const state = { width, height }
 
@@ -381,6 +385,7 @@ export default class extends Component {
     const previousOffset = horizontal ? offset.x : offset.y
     const newOffset = horizontal ? contentOffset.x : contentOffset.y
 
+    if(offset === undefined || this.internals.offset === undefined){ return; }
     if (previousOffset === newOffset &&
       (index === 0 || index === children.length - 1)) {
       this.internals.isScrolling = false
