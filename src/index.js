@@ -527,6 +527,7 @@ export default class extends Component {
   renderPagination = () => {
      // By default, dots only show when `total` >= 2
     if (this.state.total <= 1) return null
+    if (this.props.lastNotNeedPaignation && this.state.index === this.state.total - 1) {return null}
 
     let dots = []
     const ActiveDot = this.props.activeDot || <View style={[{
